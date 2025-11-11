@@ -1,5 +1,5 @@
 import * as dishService from "../services/recommendationService.js";
-import { generateDishRecommendation } from "../utils/openai.js";
+import { generateDishRecommendation, generateQuickSuggestions } from "../utils/openai/index.js";
 //Generate AI recommendations AND save to a chat session
 export async function recommendDish(req, res) {
     try {
@@ -50,6 +50,20 @@ export async function deleteDish(req, res) {
     catch (err) {
         console.error(err);
         return res.status(500).json({ error: err.message });
+    }
+}
+export async function getQuickDishSuggestion(req, res) {
+    const { prompt } = req.body;
+    if (!prompt || typeof prompt !== "string" || prompt.trim() === "") {
+        return res.status(400).json({ error: "prompt is required and must be a non-empty string" });
+    }
+    try {
+        const suggestions = await generateQuickSuggestions(prompt.trim());
+        return res.json({ success: true, data: suggestions });
+    }
+    catch (err) {
+        console.error("Error generating quick suggestions:", err);
+        return res.status(500).json({ error: "Failed to generate suggestions" });
     }
 }
 //# sourceMappingURL=recommendationController.js.map

@@ -1,7 +1,6 @@
 import type { Request, Response } from 'express';
 import * as chatService from '../services/chatService.js';
-import { streamDietaryConsultation, generateSessionTitle } from '../utils/openai.js';
-
+import { streamDietaryConsultation, generateSessionTitle } from '../utils/openai/index.js';
 interface SessionParams {
     sessionId: string;
 }

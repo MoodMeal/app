@@ -6,6 +6,9 @@ const recommendationRoutes = express.Router();
 // Creates JSON list of recommended dishes based on users input
 recommendationRoutes.post("/", recommendationController.recommendDish);
 
+// Creates a short list of AI dish suggestions based on user's prompt
+recommendationRoutes.post("/suggestion", recommendationController.getQuickDishSuggestion);
+
 // Gets a list of recommendations for each chat session
 recommendationRoutes.get("/session/:sessionId", recommendationController.getDishesForSession);
 
