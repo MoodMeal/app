@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { generateDishRecommendation } from "../utils/openai.js";
+import { generateDishRecommendation } from "../utils/openai/index.js";
 const prisma = new PrismaClient();
 // Generate AI dish recommendations
 export async function generateRecommendation(prompt) {

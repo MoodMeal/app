@@ -1,8 +1,8 @@
-import { generateRandomUserPrompts } from '../utils/openai.js';
+import { generateUserPromptSuggestions } from '../utils/openai/index.js';
 // Gets a list of suggestions that the user can use to ask Dietician
 export async function getSuggestedPrompts(req, res) {
     try {
-        const prompts = await generateRandomUserPrompts();
+        const prompts = await generateUserPromptSuggestions();
         res.json({ data: prompts });
     }
     catch (error) {

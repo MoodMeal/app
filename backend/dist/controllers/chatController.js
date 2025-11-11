@@ -1,5 +1,5 @@
 import * as chatService from '../services/chatService.js';
-import { streamDietaryConsultation, generateSessionTitle } from '../utils/openai.js';
+import { streamDietaryConsultation, generateSessionTitle } from '../utils/openai/index.js';
 // Get all chat sessions for a user
 export const getAllSessions = async (req, res) => {
     try {

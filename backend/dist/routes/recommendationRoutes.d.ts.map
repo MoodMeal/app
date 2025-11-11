@@ -1,1 +1,1 @@
-{"version":3,"file":"recommendationRoutes.d.ts","sourceRoot":"","sources":["../../src/routes/recommendationRoutes.ts"],"names":[],"mappings":"AAGA,QAAA,MAAM,oBAAoB,4CAAmB,CAAC;AAW9C,eAAe,oBAAoB,CAAC"}
+{"version":3,"file":"recommendationRoutes.d.ts","sourceRoot":"","sources":["../../src/routes/recommendationRoutes.ts"],"names":[],"mappings":"AAGA,QAAA,MAAM,oBAAoB,4CAAmB,CAAC;AAc9C,eAAe,oBAAoB,CAAC"}
